@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Siddharth Diary</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:#0d0d0f;
+    color:#f5f1ea;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 20%, #29201e 0%, #0d0d0f 55%);
+}
+
+.hero-content{
+    max-width:600px;
+    animation:fadeIn 1.5s ease;
+}
+
+.profile{
+    width:155px;
+    height:155px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #d6b47b;
+    padding:5px;
+    background:#111;
+    box-shadow:0 0 35px rgba(214,180,123,.25);
+    margin-bottom:25px;
+}
+
+.small-title{
+    color:#c9a873;
+    letter-spacing:4px;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:48px;
+    font-weight:normal;
+    margin-bottom:15px;
+}
+
+.tagline{
+    color:#b9b2a8;
+    font-size:18px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.enter-btn{
+    display:inline-block;
+    padding:13px 28px;
+    border:1px solid #c9a873;
+    color:#c9a873;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.enter-btn:hover{
+    background:#c9a873;
+    color:#111;
+}
+
+/* POETRY SECTION */
+
+.poetry-section{
+    padding:80px 20px;
+    max-width:850px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:34px;
+    font-weight:normal;
+}
+
+.section-title p{
+    color:#918b84;
+    margin-top:10px;
+}
+
+/* POETRY CARDS */
+
+.poetry-card{
+    background:#151518;
+    border:1px solid #29292d;
+    border-radius:16px;
+    padding:25px;
+    margin-bottom:18px;
+    cursor:pointer;
+    transition:.3s;
+    position:relative;
+}
+
+.poetry-card:hover{
+    transform:translateY(-3px);
+    border-color:#806744;
+    background:#18181b;
+}
+
+.poetry-number{
+    color:#8e7046;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.poetry-card h3{
+    font-size:23px;
+    font-weight:normal;
+    margin-bottom:9px;
+}
+
+.poetry-card p{
+    color:#88837d;
+    font-size:14px;
+}
+
+/* READER */
+
+.reader{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(7,7,8,.97);
+    z-index:100;
+    overflow-y:auto;
+    padding:30px 20px;
+}
+
+.reader-box{
+    max-width:700px;
+    margin:30px auto;
+    background:#121215;
+    border:1px solid #302c27;
+    border-radius:18px;
+    padding:35px 25px 45px;
+}
+
+.close{
+    display:block;
+    text-align:right;
+    color:#c9a873;
+    font-size:30px;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+.reader-title{
+    font-size:32px;
+    font-weight:normal;
+    color:#e7d3b1;
+    margin-bottom:28px;
+    text-align:center;
+}
+
+.poem{
+    white-space:pre-line;
+    color:#ddd7cf;
+    font-size:18px;
+    line-height:2;
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:45px 20px;
+    border-top:1px solid #222;
+    color:#716d68;
+    font-size:13px;
+}
+
+footer span{
+    color:#c9a873;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:500px){
+
+    h1{
+        font-size:39px;
+    }
+
+    .tagline{
+        font-size:16px;
+    }
+
+    .profile{
+        width:135px;
+        height:135px;
+    }
+
+    .poetry-section{
+        padding:60px 16px;
+    }
+
+    .poem{
+        font-size:17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <!-- Apni photo ka naam profile.jpg rakho -->
+        <img <img src="./profile.jpg" class="profile" alt="Siddharth">
+
+        <div class="small-title">My Little World of Words</div>
+
+        <h1>Siddharth Diary</h1>
+
+        <p class="tagline">
+            "Jo baatein duniya se keh nahi paaya,
+            unhe maine lafzon mein likh diya."
+        </p>
+
+        <a href="#poetry" class="enter-btn">
+            Meri Kahani Padho ↓
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- POETRY -->
+
+<section class="poetry-section" id="poetry">
+
+    <div class="section-title">
+
+        <h2>Meri Kavita</h2>
+
+        <p>
+            Mere dil se nikle kuch alfaaz...
+        </p>
+
+    </div>
+
+
+    <!-- POEM 1 -->
+
+    <div class="poetry-card"
+         onclick="openPoem(0)">
+
+        <div class="poetry-number">
+            POETRY 01
+        </div>
+
+        <h3>Khwab</h3>
+
+        <p>
+            Kuch kahaniyan poori hokar bhi adhuri reh jaati hain...
+        </p>
+
+    </div>
+
+
+    <!-- POEM 2 -->
+
+    <div class="poetry-card"
+         onclick="openPoem(1)">
+
+        <div class="poetry-number">
+            POETRY 02
+        </div>
+
+        <h3>Ye dill bhi pagal hai</h3>
+
+        <p>
+            Kabhi kabhi khamoshi sabse zyada bolti hai...
+        </p>
+
+    </div>
+
+
+    <!-- POEM 3 -->
+
+    <div class="poetry-card"
+         onclick="openPoem(2)">
+
+        <div class="poetry-number">
+            POETRY 03
+        </div>
+
+        <h3>Janm din Bewafa ki</h3>
+
+        <p>
+            Kuch log door hokar bhi dil ke bahut paas hote hain...
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- POEM READER -->
+
+<div class="reader" id="reader">
+
+    <div class="reader-box">
+
+        <div class="close" onclick="closePoem()">
+            ×
+        </div>
+
+        <h2 class="reader-title" id="readerTitle"></h2>
+
+        <div class="poem" id="readerPoem"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    © 2026 <span>Siddharth Diary</span>
+
+    <br><br>
+
+    Written from the heart.
+
+</footer>
+
+
+<script>
+
+const poems = [
+
+{
+    title:"Khwab",
+
+    text:`Chand se khubsurat koi nahi,
+
+par tujhse khubsurat chand kahan.
+
+Phool se behtar khushbu nahi,
+
+par teri saanson se behtar khushbu kahan.
+
+Jheel se koi gehra nahi hai,
+
+par teri nigaahon se badi
+jheel nahi hai.
+
+Haan, sukoon deta hai ye aasman,
+
+par tere ehsaas se zyada
+sukoon kahan hai.
+
+— Siddharth`
+},
+
+{
+    title:"Ye Dill bhi pagal hai",
+
+    text:`Kesi nadan si chahat ki hai maine
+
+Khudko khud se shikayat ki hai maine
+
+Jiske saath jeena naseeb nahin meraa
+
+Ek esi ladki se mohabbat ki hai maine
+
+Main janta hu wo mera nahin hail
+
+Haan Manta hu use chahana sahi nahin hai
+
+Fir bhi khudko rok nahin pata
+
+Main Mera haal kisise keh nahi pata
+
+Kher jo bhi ho jesaa bhi ho
+
+Ye Dill usipe ibaadat ki ha maine
+
+Hann,,sirf usise mohobbat ki ha maine
+
+Siddharth.`
+},
+
+{
+    title:"Janm din Bewafa ki",
+
+    text:`khamoshi ke chadar
+chehere par dhak gayi ,,, 
+
+Andhero ki din aa rahi hai kya 
+Suna ishq walo ko sharm ho hail
+
+bewafai ke din aa rahi hai kya
+
+Hamari dill toh kehti hai
+
+Kal zakhm Dene walo ke din hai
+
+Ohh achha uss bewafa ki
+
+Janam din aa rahi hai kya
+
+Siddharthn.`
+}
+
+];
+
+
+function openPoem(index){
+
+    document.getElementById("readerTitle").innerText =
+        poems[index].title;
+
+    document.getElementById("readerPoem").innerText =
+        poems[index].text;
+
+    document.getElementById("reader").style.display = "block";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closePoem(){
+
+    document.getElementById("reader").style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+</script>
+
+</body>
+</html>
+</html>
